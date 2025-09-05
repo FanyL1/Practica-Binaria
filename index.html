@@ -3,236 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Operaciones con Números Binarios</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            color: #333;
-            background: #2c3e50;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        h1 {
-            color: #2c3e50;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .exercise {
-            background-color: white;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .question {
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: #2c3e50;
-        }
-        .example{
-            margin-bottom: 10px;
-            color: #2c3e50;
-        }
-        input[type="text"] {
-            padding: 8px;
-            width: 250px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-family: monospace;
-        }
-        .change-index{
-            background-color:  #3498db;
-            display: block;
-            margin: 30px 30px;
-            padding: 10px 20px;
-            font-size: 16px;
-        }
-        .div-button-bottom{
-            display: flex;
-            justify-content: center;
-        }
-        button {
-            background-color: #3498db;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 4px;
-            cursor: pointer;
-            margin-left: 10px;
-        }
-        button:hover {
-            background-color: #2980b9;
-        }
-        .result {
-            margin-top: 10px;
-            font-weight: bold;
-            padding: 5px;
-            border-radius: 4px;
-        }
-        .correct {
-            color: #27ae60;
-        }
-        .incorrect {
-            color: #e74c3c;
-        }
-        .check-all {
-            background-color: #2ecc71;
-            display: block;
-            margin: 30px 20px;
-            padding: 10px 20px;
-            font-size: 16px;
-        }
-        .check-all:hover {
-            background-color: #27ae60;
-        }
-        .score {
-            text-align: center;
-            font-size: 18px;
-            margin-top: 20px;
-            font-weight: bold;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <title>Cuestionario de Operaciones Binarias</title>
+
 </head>
 <body>
-<div class="container">
-    <h1>Operaciones con Números Binarios</h1>
-    
-    <div class="exercise">
-        <div class="question">1. Suma: 11011010 + 10110111 + 10011101 + 1110001 = </div>
-        <input type="text" id="answer1" placeholder="Ingresa tu respuesta en binario">
-        <button onclick="checkAnswer(1)">Comprobar</button>
-        <div id="result1" class="result"></div>
-    </div>
-    
-    <div class="exercise">
-        <div class="question">2. Suma: 101010101 + 1100110011 + 100111000 + 1011101 = </div>
-        <input type="text" id="answer2" placeholder="Ingresa tu respuesta en binario">
-        <button onclick="checkAnswer(2)">Comprobar</button>
-        <div id="result2" class="result"></div>
-    </div>
-    
-    <div class="exercise">
-        <div class="question">3. Resta: 101101000 - 11010110 = </div>
-        <input type="text" id="answer3" placeholder="Ingresa tu respuesta en binario">
-        <button onclick="checkAnswer(3)">Comprobar</button>
-        <div id="result3" class="result"></div>
-    </div>
-    
-    <div class="exercise">
-        <div class="question">4. Resta: 1000000000 - 10100101 - 10111011 = </div>
-        <input type="text" id="answer4" placeholder="Ingresa tu respuesta en binario">
-        <button onclick="checkAnswer(4)">Comprobar</button>
-        <div id="result4" class="result"></div>
-    </div>
-    
-    <div class="exercise">
-        <div class="question">5. Multiplicación: 110101101 × 10110101 = </div>
-        <input type="text" id="answer5" placeholder="Ingresa tu respuesta en binario">
-        <button onclick="checkAnswer(5)">Comprobar</button>
-        <div id="result5" class="result"></div>
-    </div>
-    
-    <div class="exercise">
-        <div class="question">6. Multiplicación: 101110111 × 11010011 = </div>
-        <input type="text" id="answer6" placeholder="Ingresa tu respuesta en binario">
-        <button onclick="checkAnswer(6)">Comprobar</button>
-        <div id="result6" class="result"></div>
-    </div>
-    
-    <div class="exercise">
-        <div class="question">7. División: 1011011000 ÷ 110101 = </div>
-        <div class="example">Ejemplo del formato de respuesta "(Cociente) R (Resto)", ej: 1001 R 10 </div>
-        <input type="text" id="answer7" placeholder="Ingrese el cociente y el resto">
-        <button onclick="checkAnswer(7)">Comprobar</button>
-        <div id="result7" class="result"></div>
-    </div>
-    
-    <div class="exercise">
-        <div class="question">8. División: 10011101101 ÷ 1010110 = </div>
-        <div class="example">Ejemplo del formato de respuesta "(Cociente) R (Resto)", ej: 1001 R 10 </div>
-        <input type="text" id="answer8" placeholder="Ingrese el cociente y el resto">
-        <button onclick="checkAnswer(8)">Comprobar</button>
-        <div id="result8" class="result"></div>
-    </div>
+    <div class="container">
+        <header>
+            <h1>Cuestionario de Operaciones Binarias</h1>
+            <p class="subtitle">Practica sumas, restas, multiplicaciones y divisiones con números binarios</p>
+        </header>
 
-     <div id="score" class="score"></div>
-     <div id="nota" class="score"></div>
+        <div class="instructions">
+            <h3>Instrucciones</h3>
+            <ul>
+                <li>Agrega tus propios ejercicios utilizando el formulario "Agregar Ejercicio"</li>
+                <li>Selecciona el tipo de operación y escribe los números binarios</li>
+                <li>Haz clic en "Agregar Ejercicio" para añadirlo a la lista</li>
+                <li>Para resolver un ejercicio, haz clic en "Resolver" e ingresa tu respuesta</li>
+                <li>El sistema verificará automáticamente si tu respuesta es correcta</li>
+                <li>Puedes eliminar ejercicios con el botón "Eliminar"</li>
+            </ul>
+        </div>
+        <button class="change-index" onclick="irIndex2()">Ejemplo de prueba</button>
+        <div class="panel">
+            <div class="add-exercise">
+                <h2>Agregar Nuevo Ejercicio</h2>
+                <div class="form-group">
+                    <label for="operation">Tipo de Operación:</label>
+                    <select id="operation">
+                        <option value="suma">Suma (+)</option>
+                        <option value="resta">Resta (-)</option>
+                        <option value="multiplicacion">Multiplicación (×)</option>
+                        <option value="division">División (÷)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="num1">Primer número binario:</label>
+                    <input type="text" id="num1" placeholder="Ej: 11011010">
+                </div>
+                <div class="form-group">
+                    <label for="num2">Segundo número binario:</label>
+                    <input type="text" id="num2" placeholder="Ej: 10110111">
+                </div>
+                <div class="form-group" id="num3-group" style="display: none;">
+                    <label for="num3">Tercer número binario (opcional):</label>
+                    <input type="text" id="num3" placeholder="Ej: 10011101">
+                </div>
+                <div class="form-group" id="num4-group" style="display: none;">
+                    <label for="num4">Cuarto número binario (opcional):</label>
+                    <input type="text" id="num4" placeholder="Ej: 1110001">
+                </div>
+                <button id="add-exercise-btn">Agregar Ejercicio</button>
+            </div>
 
-    <div class="div-button-bottom">
-        <button class="check-all" onclick="checkAll()">Comprobar todas las respuestas</button>
-        <button class="change-index" onclick="irIndex2()">Crear Ejercicios</button>
+            <div class="exercises-list">
+                <h2>Tus Ejercicios</h2>
+                <div id="exercises-container">
+                    <!-- Los ejercicios se agregarán aquí dinámicamente -->
+                </div>
+            </div>
+        </div>
+
+        <div class="score-panel">
+            <h2>Tu Puntuación</h2>
+            <p class="score" id="score">0/0 ejercicios correctos</p>
+        </div>
     </div>
-
-</div>    
-
+    <script src="script.js"></script>
     <script>
         function irIndex2() {
             window.location.href = 'index2.html';
-        }
-        const correctAnswers = {
-            1: "1010011111",
-            2: "11000011101", 
-            3: "10010010", 
-            4: "10100000",
-            5: "10010111101010001",
-            6: "10011010100010101",
-            7: "1101 R 1111",
-            8: "1110 R 110001"
-        };
-        
-        // Función para comprobar una respuesta
-        function checkAnswer(questionNumber) {
-            const userAnswer = document.getElementById(`answer${questionNumber}`).value.trim();
-            const resultElement = document.getElementById(`result${questionNumber}`);
-            
-            if (userAnswer === correctAnswers[questionNumber]) {
-                resultElement.textContent = "¡Correcto!";
-                resultElement.className = "result correct";
-            } else {
-                resultElement.textContent = `Incorrecto. La respuesta correcta es: ${correctAnswers[questionNumber]}`;
-                resultElement.className = "result incorrect";
-            }
-            
-            updateScore();
-        }
-        
-        // Función para comprobar todas las respuestas
-        function checkAll() {
-            for (let i = 1; i <= 8; i++) {
-                checkAnswer(i);
-            }
-        }
-        
-        // Función para calcular y mostrar el puntaje
-        function updateScore() {
-            let score = 0;
-            for (let i = 1; i <= 8; i++) {
-                const userAnswer = document.getElementById(`answer${i}`).value.trim();
-                if (userAnswer === correctAnswers[i]) {
-                    score++;
-                }
-            }
-
-            if (score < 5) {
-                document.getElementById('nota').textContent = `Reprobado`;
-            }else{
-                if (score == 5) {
-                    document.getElementById('nota').textContent = `Por poco, pero Aprobado`;
-                }else{
-                    document.getElementById('nota').textContent = `Aprobado`;
-                }
-            }            
-            document.getElementById('score').textContent = `Puntuación: ${score} de 8`;
         }
     </script>
 </body>
