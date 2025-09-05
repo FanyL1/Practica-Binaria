@@ -9,6 +9,7 @@
             let exercises = [];
             let score = { correct: 0, total: 0 };
 
+
             // Mostrar/ocultar campos adicionales según la operación
             operationSelect.addEventListener('change', function() {
                 if (this.value === 'suma' || this.value === 'resta') {

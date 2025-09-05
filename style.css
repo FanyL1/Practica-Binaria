@@ -121,7 +121,9 @@
             font-weight: 600;
             font-size: 18px;
         }
-
+        .change-index{
+            margin-bottom: 20px;
+        }
         .exercise-actions {
             display: flex;
             gap: 10px;

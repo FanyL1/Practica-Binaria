@@ -10,9 +10,18 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #f5f5f5;
             color: #333;
+            background: #2c3e50;
         }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
         h1 {
             color: #2c3e50;
             text-align: center;
@@ -41,6 +50,17 @@
             border-radius: 4px;
             font-family: monospace;
         }
+        .change-index{
+            background-color:  #3498db;
+            display: block;
+            margin: 30px 30px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        .div-button-bottom{
+            display: flex;
+            justify-content: center;
+        }
         button {
             background-color: #3498db;
             color: white;
@@ -68,7 +88,7 @@
         .check-all {
             background-color: #2ecc71;
             display: block;
-            margin: 30px auto;
+            margin: 30px 20px;
             padding: 10px 20px;
             font-size: 16px;
         }
@@ -84,6 +104,7 @@
     </style>
 </head>
 <body>
+<div class="container">
     <h1>Operaciones con Números Binarios</h1>
     
     <div class="exercise">
@@ -143,12 +164,21 @@
         <button onclick="checkAnswer(8)">Comprobar</button>
         <div id="result8" class="result"></div>
     </div>
-    
-    <button class="check-all" onclick="checkAll()">Comprobar todas las respuestas</button>
-    
-    <div id="score" class="score"></div>
+
+     <div id="score" class="score"></div>
+     <div id="nota" class="score"></div>
+
+    <div class="div-button-bottom">
+        <button class="check-all" onclick="checkAll()">Comprobar todas las respuestas</button>
+        <button class="change-index" onclick="irIndex2()">Crear Ejercicios</button>
+    </div>
+
+</div>    
 
     <script>
+        function irIndex2() {
+            window.location.href = 'index2.html';
+        }
         const correctAnswers = {
             1: "1010011111",
             2: "11000011101", 
@@ -192,7 +222,16 @@
                     score++;
                 }
             }
-            
+
+            if (score < 5) {
+                document.getElementById('nota').textContent = `Reprobado`;
+            }else{
+                if (score == 5) {
+                    document.getElementById('nota').textContent = `Por poco, pero Aprobado`;
+                }else{
+                    document.getElementById('nota').textContent = `Aprobado`;
+                }
+            }            
             document.getElementById('score').textContent = `Puntuación: ${score} de 8`;
         }
     </script>
