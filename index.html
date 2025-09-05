@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operaciones con Números Binarios</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .exercise {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        input[type="text"] {
+            padding: 8px;
+            width: 250px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+            padding: 5px;
+            border-radius: 4px;
+        }
+        .correct {
+            color: #27ae60;
+        }
+        .incorrect {
+            color: #e74c3c;
+        }
+        .check-all {
+            background-color: #2ecc71;
+            display: block;
+            margin: 30px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        .check-all:hover {
+            background-color: #27ae60;
+        }
+        .score {
+            text-align: center;
+            font-size: 18px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Operaciones con Números Binarios</h1>
+    
+    <div class="exercise">
+        <div class="question">1. Suma: 11011010 + 10110111 + 10011101 + 1110001 = </div>
+        <input type="text" id="answer1" placeholder="Ingresa tu respuesta en binario">
+        <button onclick="checkAnswer(1)">Comprobar</button>
+        <div id="result1" class="result"></div>
+    </div>
+    
+    <div class="exercise">
+        <div class="question">2. Suma: 101010101 + 1100110011 + 100111000 + 1011101 = </div>
+        <input type="text" id="answer2" placeholder="Ingresa tu respuesta en binario">
+        <button onclick="checkAnswer(2)">Comprobar</button>
+        <div id="result2" class="result"></div>
+    </div>
+    
+    <div class="exercise">
+        <div class="question">3. Resta: 101101000 - 11011011 - 10010110 - 1111001 = </div>
+        <input type="text" id="answer3" placeholder="Ingresa tu respuesta en binario">
+        <button onclick="checkAnswer(3)">Comprobar</button>
+        <div id="result3" class="result"></div>
+    </div>
+    
+    <div class="exercise">
+        <div class="question">4. Resta: 1000000000 - 10100101 - 11011101 - 10111011 = </div>
+        <input type="text" id="answer4" placeholder="Ingresa tu respuesta en binario">
+        <button onclick="checkAnswer(4)">Comprobar</button>
+        <div id="result4" class="result"></div>
+    </div>
+    
+    <div class="exercise">
+        <div class="question">5. Multiplicación: 110101101 × 10110101 = </div>
+        <input type="text" id="answer5" placeholder="Ingresa tu respuesta en binario">
+        <button onclick="checkAnswer(5)">Comprobar</button>
+        <div id="result5" class="result"></div>
+    </div>
+    
+    <div class="exercise">
+        <div class="question">6. Multiplicación: 101110111 × 11010011 = </div>
+        <input type="text" id="answer6" placeholder="Ingresa tu respuesta en binario">
+        <button onclick="checkAnswer(6)">Comprobar</button>
+        <div id="result6" class="result"></div>
+    </div>
+    
+    <div class="exercise">
+        <div class="question">7. División: 1011011000 ÷ 110101 = </div>
+        <input type="text" id="answer7" placeholder="Ingresa cociente y residuo (ej: 1101 R 10)">
+        <button onclick="checkAnswer(7)">Comprobar</button>
+        <div id="result7" class="result"></div>
+    </div>
+    
+    <div class="exercise">
+        <div class="question">8. División: 10011101101 ÷ 1010110 = </div>
+        <input type="text" id="answer8" placeholder="Ingresa cociente y residuo (ej: 1101 R 10)">
+        <button onclick="checkAnswer(8)">Comprobar</button>
+        <div id="result8" class="result"></div>
+    </div>
+    
+    <button class="check-all" onclick="checkAll()">Comprobar todas las respuestas</button>
+    
+    <div id="score" class="score"></div>
+
+    <script>
+        // Respuestas correctas
+        const correctAnswers = {
+            1: "101010111",
+            2: "11000011001",
+            3: "-1001", // Nota: Este resultado es negativo en binario
+            4: "1000011",
+            5: "100111010000000001",
+            6: "100100100000110101",
+            7: "1101 R 1111",
+            8: "1110 R 110001"
+        };
+        
+        // Función para comprobar una respuesta
+        function checkAnswer(questionNumber) {
+            const userAnswer = document.getElementById(`answer${questionNumber}`).value.trim();
+            const resultElement = document.getElementById(`result${questionNumber}`);
+            
+            if (userAnswer === correctAnswers[questionNumber]) {
+                resultElement.textContent = "¡Correcto!";
+                resultElement.className = "result correct";
+            } else {
+                resultElement.textContent = `Incorrecto. La respuesta correcta es: ${correctAnswers[questionNumber]}`;
+                resultElement.className = "result incorrect";
+            }
+            
+            updateScore();
+        }
+        
+        // Función para comprobar todas las respuestas
+        function checkAll() {
+            for (let i = 1; i <= 8; i++) {
+                checkAnswer(i);
+            }
+        }
+        
+        // Función para calcular y mostrar el puntaje
+        function updateScore() {
+            let score = 0;
+            for (let i = 1; i <= 8; i++) {
+                const userAnswer = document.getElementById(`answer${i}`).value.trim();
+                if (userAnswer === correctAnswers[i]) {
+                    score++;
+                }
+            }
+            
+            document.getElementById('score').textContent = `Puntuación: ${score} de 8`;
+        }
+    </script>
+</body>
+</html>
