@@ -30,6 +30,10 @@
             margin-bottom: 10px;
             color: #2c3e50;
         }
+        .example{
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
         input[type="text"] {
             padding: 8px;
             width: 250px;
@@ -126,14 +130,16 @@
     
     <div class="exercise">
         <div class="question">7. División: 1011011000 ÷ 110101 = </div>
-        <input type="text" id="answer7" placeholder="(ej: 1101 R 10)">
+        <div class="example">Ejemplo del formato de respuesta "(Cociente) R (Resto)", ej: 1001 R 10 </div>
+        <input type="text" id="answer7" placeholder="Ingrese el cociente y el resto">
         <button onclick="checkAnswer(7)">Comprobar</button>
         <div id="result7" class="result"></div>
     </div>
     
     <div class="exercise">
         <div class="question">8. División: 10011101101 ÷ 1010110 = </div>
-        <input type="text" id="answer8" placeholder="(ej: 1101 R 10)">
+        <div class="example">Ejemplo del formato de respuesta "(Cociente) R (Resto)", ej: 1001 R 10 </div>
+        <input type="text" id="answer8" placeholder="Ingrese el cociente y el resto">
         <button onclick="checkAnswer(8)">Comprobar</button>
         <div id="result8" class="result"></div>
     </div>
@@ -143,11 +149,10 @@
     <div id="score" class="score"></div>
 
     <script>
-        // Respuestas correctas
         const correctAnswers = {
             1: "1010011111",
-            2: "11000011101",
-            3: "10010010", // Nota: Este resultado es negativo en binario
+            2: "11000011101", 
+            3: "10010010", 
             4: "10100000",
             5: "10010111101010001",
             6: "10011010100010101",
