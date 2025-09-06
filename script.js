@@ -126,7 +126,7 @@
                             </div>
                         </div>
                         <div class="solution-panel" id="solution-${exercise.id}">
-                            <input type="text" id="answer-${exercise.id}" placeholder="Ingresa tu respuesta en binario">
+                            <input type="number" id="answer-${exercise.id}" placeholder="Ingresa tu respuesta en binario">
                             <button class="check-btn" data-id="${exercise.id}">Comprobar</button>
                             <div class="result" id="result-${exercise.id}"></div>
                         </div>
